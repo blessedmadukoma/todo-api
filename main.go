@@ -202,8 +202,8 @@ func main() {
 	router.HandleFunc("/todo/{id}", deleteTodo).Methods("DELETE")
 	router.HandleFunc("/todo/search/{key}", searchTodos).Methods("POST")
 
-	fmt.Println("Server starting at port")
 	port := os.Getenv("PORT")
+	fmt.Println("Server starting at port:" + port)
 	log.Fatal(http.ListenAndServe(":"+port, router))
 
 }
